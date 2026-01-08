@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "holocell"
-version = "0.1.0"
+version = "0.2.0"
 description = "Architectural discovery engine for the holographic substrate of physics constants"
 readme = "README.md"
 license = {text = "MIT"}
@@ -34,10 +34,13 @@ classifiers = [
 requires-python = ">=3.9"
 dependencies = []
 
+[project.scripts]
+holocell = "holocell.cli:main"
+
 [project.urls]
-Homepage = "https://github.com/worldbridgerstudios/holocell"
+Homepage = "https://github.com/worldbridgerstudios/HoloCell"
 Documentation = "https://zenodo.org/records/18183435"
-Repository = "https://github.com/worldbridgerstudios/holocell"
+Repository = "https://github.com/worldbridgerstudios/HoloCell"
 
 [tool.setuptools.packages.find]
 where = ["."]

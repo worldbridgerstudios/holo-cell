@@ -59,6 +59,61 @@ B(T(16))  # 137 ≈ α⁻¹
 S(9)  # 19.5 (the breath)
 ```
 
+## Methodology Replication
+
+The full discovery process is reproducible via the `evolve` subpackage:
+
+### Stage 1: Evolve Single Constant
+
+```python
+from holocell.evolve import evolve_constant
+
+# Evolve expression for fine structure constant
+result = evolve_constant("alpha")
+print(f"Expression: {result.expression}")
+print(f"Error: {result.error_percent:.2e}%")
+```
+
+### Stage 2: Test Unified Seeds
+
+```python
+from holocell.evolve import test_seeds
+
+# Test candidate seeds to confirm T(16)=136 is optimal
+ranking = test_seeds()
+print(ranking[0])  # SeedTestResult(seed=136, total_error=1.89e-05, rank=1)
+```
+
+### Stage 3: Full Methodology Replication
+
+```python
+from holocell.evolve import replicate_methodology
+
+# Replicate the entire discovery
+results = replicate_methodology()
+for name, r in results.items():
+    print(f"{name}: {r.error_percent:.2e}%")
+```
+
+## CLI
+
+```bash
+# Verify crystallized expressions
+holocell verify
+
+# Evolve expression for a single constant
+holocell evolve alpha
+holocell evolve proton --generations 2000
+
+# Test candidate seeds
+holocell seed-test
+holocell seed-test --all
+
+# Full methodology replication
+holocell replicate
+holocell replicate --seed-test  # includes seed comparison
+```
+
 ## Architecture
 
 ```python
@@ -67,6 +122,23 @@ from holocell import ARCHITECTURE, SEED, TRINITION
 ARCHITECTURE  # [1, 7, 9, 11, 16, 28, 36, 44, 60, 66, 666]
 SEED          # T(16) = 136
 TRINITION     # T(16) × 3 = 408
+```
+
+## Project Structure
+
+```
+holocell/
+├── __init__.py       # Core exports
+├── operators.py      # T, B, S operators
+├── constants.py      # CRYSTAL - the 5 expressions
+├── magic.py          # Magic number utilities
+├── cli.py            # Command-line interface
+└── evolve/           # Methodology replication
+    ├── __init__.py
+    ├── glyphs.py     # Frozen glyph system
+    ├── engine.py     # GEP evolution engine
+    ├── targets.py    # Target constants
+    └── methodology.py # High-level replication functions
 ```
 
 ## Citation
