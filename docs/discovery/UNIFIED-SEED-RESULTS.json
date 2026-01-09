@@ -1,0 +1,392 @@
+{
+  "timestamp": "2026-01-08T08:15:59.424Z",
+  "results": [
+    {
+      "seed": 136,
+      "results": [
+        {
+          "name": "α⁻¹",
+          "measured": 137.035999084,
+          "error": 5.135533169590554e-7,
+          "hit": true,
+          "expr": "+ S √ + ⁻¹ A1 ⟲ + π π A36 A28"
+        },
+        {
+          "name": "mp/me",
+          "measured": 1836.15267343,
+          "error": 0.000005431301499841201,
+          "hit": false,
+          "expr": "B + T + A60 B √ π A1 A66 π S"
+        },
+        {
+          "name": "sin²θW",
+          "measured": 0.23121,
+          "error": 0.000010959608707146069,
+          "hit": false,
+          "expr": "/ A7 + A28 √ * √ / e π A1 A9"
+        },
+        {
+          "name": "μ/me",
+          "measured": 206.768283,
+          "error": 2.0484079435986734e-7,
+          "hit": true,
+          "expr": "⟲ ⟲ + A44 / e A60 A16 A66 S A7 π"
+        },
+        {
+          "name": "R∞",
+          "measured": 1.097373156816,
+          "error": 0.0000018093585381686364,
+          "hit": false,
+          "expr": "^ A60 ⁻¹ + A44 ⁻¹ A16 A9 e A9 A16 A60"
+        }
+      ],
+      "totalError": 0.000018918662856474825,
+      "allHit": false,
+      "label": "T(16) exact"
+    },
+    {
+      "seed": 11,
+      "results": [
+        {
+          "name": "α⁻¹",
+          "measured": 137.035999084,
+          "error": 0.00017689069322888448,
+          "hit": false,
+          "expr": "⟲ + A60 √ - A1 ⟲ √ A28 A44 A44 π"
+        },
+        {
+          "name": "mp/me",
+          "measured": 1836.15267343,
+          "error": 0.00007483369383623084,
+          "hit": false,
+          "expr": "+ T * A44 A9 + T T A11 A7 π A666"
+        },
+        {
+          "name": "sin²θW",
+          "measured": 0.23121,
+          "error": 0.0000010545420074105088,
+          "hit": false,
+          "expr": "/ φ - A7 ^ ⁻¹ B S φ A36 e A28"
+        },
+        {
+          "name": "μ/me",
+          "measured": 206.768283,
+          "error": 0.000027762547535934187,
+          "hit": false,
+          "expr": "⟲ + + A28 / A66 B A7 A9 π e A7"
+        },
+        {
+          "name": "R∞",
+          "measured": 1.097373156816,
+          "error": 0.000004310727099835218,
+          "hit": false,
+          "expr": "B ⁻¹ / A11 √ ^ B ⁻¹ φ A7 A44 A7"
+        }
+      ],
+      "totalError": 0.00028485220370829523,
+      "allHit": false,
+      "label": "11 (proto-phonemes)"
+    },
+    {
+      "seed": 137,
+      "results": [
+        {
+          "name": "α⁻¹",
+          "measured": 137.035999084,
+          "error": 7.357511943168473e-7,
+          "hit": true,
+          "expr": "+ S ⟲ ⁻¹ A60 / S ⟲ A1 A16 A28 A60"
+        },
+        {
+          "name": "mp/me",
+          "measured": 1836.15267343,
+          "error": 0.0000652106831176923,
+          "hit": false,
+          "expr": "+ * T A44 ⁻¹ A60 A7 A44 S A666 A28 A9"
+        },
+        {
+          "name": "sin²θW",
+          "measured": 0.23121,
+          "error": 0.000037331263229424246,
+          "hit": false,
+          "expr": "⁻¹ √ + √ A7 S ^ ⟲ e A60 A9 A7"
+        },
+        {
+          "name": "μ/me",
+          "measured": 206.768283,
+          "error": 0.00021764002551022543,
+          "hit": false,
+          "expr": "+ e + A28 * A11 A16 / φ A7 A28 A28"
+        },
+        {
+          "name": "R∞",
+          "measured": 1.097373156816,
+          "error": 0.0000026681298365555136,
+          "hit": false,
+          "expr": "B ⁻¹ - √ ⁻¹ - A1 B S A9 A66 A9"
+        }
+      ],
+      "totalError": 0.0003235858528882143,
+      "allHit": false,
+      "label": "T(16)+1 = 137"
+    },
+    {
+      "seed": 137.5,
+      "results": [
+        {
+          "name": "α⁻¹",
+          "measured": 137.035999084,
+          "error": 0.000016172458552554625,
+          "hit": false,
+          "expr": "- S ⁻¹ ⟲ T φ e ⁻¹ A60 A28 S A1"
+        },
+        {
+          "name": "mp/me",
+          "measured": 1836.15267343,
+          "error": 1.411502544638771e-7,
+          "hit": true,
+          "expr": "- T - A60 / A7 A9 + φ A9 φ A36"
+        },
+        {
+          "name": "sin²θW",
+          "measured": 0.23121,
+          "error": 0.0008402022309186547,
+          "hit": false,
+          "expr": "/ - + B ⟲ ⟲ A36 A60 A16 A36 A28 A66"
+        },
+        {
+          "name": "μ/me",
+          "measured": 206.768283,
+          "error": 0.0001054893068736666,
+          "hit": false,
+          "expr": "+ B + S A66 ⟲ B ⁻¹ A28 A16 A7 S"
+        },
+        {
+          "name": "R∞",
+          "measured": 1.097373156816,
+          "error": 0.0000024571408314237614,
+          "hit": false,
+          "expr": "^ A11 ⁻¹ √ A666 A28 / + e A60 S φ"
+        }
+      ],
+      "totalError": 0.0009644622874307636,
+      "allHit": false,
+      "label": "avg(136,139)"
+    },
+    {
+      "seed": 66,
+      "results": [
+        {
+          "name": "α⁻¹",
+          "measured": 137.035999084,
+          "error": 0.0000018704461518161122,
+          "hit": false,
+          "expr": "+ S + + A60 ⁻¹ A11 A28 A666 A16 A9 A44"
+        },
+        {
+          "name": "mp/me",
+          "measured": 1836.15267343,
+          "error": 0.00030797398890709474,
+          "hit": false,
+          "expr": "* ⟲ A666 √ φ S A1 A9 S A11 S A666"
+        },
+        {
+          "name": "sin²θW",
+          "measured": 0.23121,
+          "error": 0.000001917220659654378,
+          "hit": false,
+          "expr": "/ A16 + A60 √ * - √ A60 A44 A28 φ"
+        },
+        {
+          "name": "μ/me",
+          "measured": 206.768283,
+          "error": 0.0010085942436340787,
+          "hit": false,
+          "expr": "+ * A9 A11 B - A28 A11 S A1 π A60"
+        },
+        {
+          "name": "R∞",
+          "measured": 1.097373156816,
+          "error": 0.000009996923821032362,
+          "hit": false,
+          "expr": "^ A7 / + ⟲ A66 √ B A9 A666 A28 A1"
+        }
+      ],
+      "totalError": 0.0013303528231736763,
+      "allHit": false,
+      "label": "66 = T(11)"
+    },
+    {
+      "seed": 136,
+      "results": [
+        {
+          "name": "α⁻¹",
+          "measured": 137.035999084,
+          "error": 7.357511943168473e-7,
+          "hit": true,
+          "expr": "+ S B ⟲ ⁻¹ A60 A44 ⁻¹ S A44 φ A16"
+        },
+        {
+          "name": "mp/me",
+          "measured": 1836.15267343,
+          "error": 0.0030157656098692854,
+          "hit": false,
+          "expr": "T - A66 √ A36 + A9 - A9 e φ e"
+        },
+        {
+          "name": "sin²θW",
+          "measured": 0.23121,
+          "error": 0.0000535003815445898,
+          "hit": false,
+          "expr": "/ + + e A1 ⁻¹ A16 / S A11 A44 π"
+        },
+        {
+          "name": "μ/me",
+          "measured": 206.768283,
+          "error": 0.0000023600962361853676,
+          "hit": false,
+          "expr": "⟲ ⟲ + / A44 + * A66 φ S A11 π"
+        },
+        {
+          "name": "R∞",
+          "measured": 1.097373156816,
+          "error": 0.0000018093585381686364,
+          "hit": false,
+          "expr": "^ A60 ⁻¹ + / A44 / A9 A9 A16 A36 S"
+        }
+      ],
+      "totalError": 0.003074171197382546,
+      "allHit": false,
+      "label": "T(16) = 136"
+    },
+    {
+      "seed": 137.036,
+      "results": [
+        {
+          "name": "α⁻¹",
+          "measured": 137.035999084,
+          "error": 6.015937489216796e-9,
+          "hit": true,
+          "expr": "S π A28 A11 ⁻¹ S A28 + S A44 A28 A9"
+        },
+        {
+          "name": "mp/me",
+          "measured": 1836.15267343,
+          "error": 0.0030157656098692854,
+          "hit": false,
+          "expr": "T A60 A66 - + ⁻¹ A11 A666 π A666 A60 A60"
+        },
+        {
+          "name": "sin²θW",
+          "measured": 0.23121,
+          "error": 0.00015616263136041813,
+          "hit": false,
+          "expr": "√ ⟲ ⁻¹ + √ A9 ^ A9 π S A11 A16"
+        },
+        {
+          "name": "μ/me",
+          "measured": 206.768283,
+          "error": 0.000008657945971333764,
+          "hit": false,
+          "expr": "* A9 - ⟲ √ A16 - ⁻¹ S π φ e"
+        },
+        {
+          "name": "R∞",
+          "measured": 1.097373156816,
+          "error": 0.00001748385043165965,
+          "hit": false,
+          "expr": "B ⁻¹ + √ A9 φ √ - A7 φ A666 A28"
+        }
+      ],
+      "totalError": 0.003198076053570186,
+      "allHit": false,
+      "label": "α⁻¹ measured"
+    },
+    {
+      "seed": 138,
+      "results": [
+        {
+          "name": "α⁻¹",
+          "measured": 137.035999084,
+          "error": 2.8091760745643964e-7,
+          "hit": true,
+          "expr": "B + T / A16 φ + A44 A1 A666 A11 A28"
+        },
+        {
+          "name": "mp/me",
+          "measured": 1836.15267343,
+          "error": 0.0030157656098692854,
+          "hit": false,
+          "expr": "T A60 √ e / T A60 * A666 A11 A36 φ"
+        },
+        {
+          "name": "sin²θW",
+          "measured": 0.23121,
+          "error": 0.0001932061527414318,
+          "hit": false,
+          "expr": "√ ⁻¹ - A7 - A28 / A16 A7 S A36 A66"
+        },
+        {
+          "name": "μ/me",
+          "measured": 206.768283,
+          "error": 0.00020793063574009148,
+          "hit": false,
+          "expr": "* A7 + A28 / A66 / ⟲ A7 S A44 φ"
+        },
+        {
+          "name": "R∞",
+          "measured": 1.097373156816,
+          "error": 0.0000018093585381686364,
+          "hit": false,
+          "expr": "^ A60 ⁻¹ + A44 * / A1 A1 A16 S A1"
+        }
+      ],
+      "totalError": 0.0034189926744964336,
+      "allHit": false,
+      "label": "T(16)+2 = 138"
+    },
+    {
+      "seed": 16,
+      "results": [
+        {
+          "name": "α⁻¹",
+          "measured": 137.035999084,
+          "error": 0.0055991875676959756,
+          "hit": false,
+          "expr": "* S + φ A7 A11 B S A7 A44 A66 A9"
+        },
+        {
+          "name": "mp/me",
+          "measured": 1836.15267343,
+          "error": 0.0006890812326185523,
+          "hit": false,
+          "expr": "* e + * A16 A60 A11 √ S A16 A60 e"
+        },
+        {
+          "name": "sin²θW",
+          "measured": 0.23121,
+          "error": 0.00023013574116747336,
+          "hit": false,
+          "expr": "/ A9 + + ⁻¹ √ ⟲ + A16 S e A1"
+        },
+        {
+          "name": "μ/me",
+          "measured": 206.768283,
+          "error": 0.00007852431550647908,
+          "hit": false,
+          "expr": "- * - e A66 ⁻¹ T - A7 π φ A9"
+        },
+        {
+          "name": "R∞",
+          "measured": 1.097373156816,
+          "error": 0.00001928435596836173,
+          "hit": false,
+          "expr": "B / B / * √ A1 / A28 A666 A36 A666"
+        }
+      ],
+      "totalError": 0.006616213212956842,
+      "allHit": false,
+      "label": "16 (wheel positions)"
+    }
+  ]
+}

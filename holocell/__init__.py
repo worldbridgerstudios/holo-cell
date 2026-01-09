@@ -21,7 +21,6 @@ SELF-HEALING NETWORKS:
         test_egyptian_candidates,
         healing_score,
         icosahedron_edges,
-        regular_polygon_edges
     )
     
     # Test the sequence: 12, 36, 60, 80, 120, 136, 240, 408
@@ -29,26 +28,40 @@ SELF-HEALING NETWORKS:
     for n, analysis in sorted(results.items()):
         print(f"{n}: self-healing={analysis.is_self_healing}")
 
-METHODOLOGY REPLICATION:
-    from holocell.evolve import evolve_constant, test_seeds, replicate_methodology
+FIVE MODES OF SIGHT:
+    from holocell.modes import (
+        evolve_constant,      # Mode 1: Fixed Focus
+        evolve_coherent,      # Mode 2: Coherent Zoom
+        evolve_seth,          # Mode 3: Seth Mode
+        run_moon_pools,       # Mode 4: Moon Pools
+        run_coherence_sweep,  # Mode 5: Coherence Test
+    )
     
-    # Stage 1: Evolve single constant
+    # Mode 1: Evolve single constant with fixed seed
     result = evolve_constant("alpha")
     
-    # Stage 2: Test unified seeds
-    ranking = test_seeds()
+    # Mode 2: Co-evolve integer set itself
+    result = evolve_coherent(integer_set_size=6)
     
-    # Stage 3: Full replication
-    results = replicate_methodology()
+    # Mode 3: Dual set partition (archive/transmitted)
+    result = evolve_seth()
+    
+    # Mode 4: Multi-pool eigenvalue triangulation
+    result = run_moon_pools(num_pools=4)
+    
+    # Mode 5: N-node corruption sweep (fault tolerance)
+    result = run_coherence_sweep(max_corruption=8)
 
 CLI:
     holocell verify              # Verify crystallized expressions
-    holocell evolve <constant>   # Evolve expression for one constant
-    holocell seed-test           # Run unified seed testing
-    holocell replicate           # Full methodology replication
+    holocell evolve <constant>   # Mode 1: Fixed Focus
+    holocell coherent            # Mode 2: Coherent Zoom
+    holocell seth                # Mode 3: Seth Mode
+    holocell moonpools           # Mode 4: Moon Pools
+    holocell sweep               # Mode 5: Coherence Test
 """
 
-__version__ = "0.3.0"
+__version__ = "0.5.0"
 
 from .operators import T, B, S, triangular, bilateral, six_nine
 from .constants import CRYSTAL, ARCHITECTURE, verify_all, verify_constant
@@ -83,7 +96,29 @@ from .networks import (
     DIRECTED,
 )
 
+# Five Modes of Sight (re-exported for convenience)
+from .modes import (
+    # Mode 1: Fixed Focus
+    evolve_constant,
+    test_seeds,
+    EvolutionResult,
+    # Mode 2: Coherent Zoom
+    evolve_coherent,
+    CoherentResult,
+    # Mode 3: Seth Mode
+    evolve_seth,
+    SethResult,
+    # Mode 4: Moon Pools
+    run_moon_pools,
+    MoonPoolResult,
+    # Mode 5: Coherence Test
+    run_coherence_sweep,
+    CoherenceSweepResult,
+)
+
 __all__ = [
+    # Version
+    "__version__",
     # Operators
     "T", "B", "S",
     "triangular", "bilateral", "six_nine",
@@ -112,4 +147,20 @@ __all__ = [
     "NetworkCandidate",
     "NetworkAnalysis",
     "WHEEL", "SPINE", "HOURGLASS", "DIRECTED",
+    # Mode 1: Fixed Focus
+    "evolve_constant",
+    "test_seeds",
+    "EvolutionResult",
+    # Mode 2: Coherent Zoom
+    "evolve_coherent",
+    "CoherentResult",
+    # Mode 3: Seth Mode
+    "evolve_seth",
+    "SethResult",
+    # Mode 4: Moon Pools
+    "run_moon_pools",
+    "MoonPoolResult",
+    # Mode 5: Coherence Test
+    "run_coherence_sweep",
+    "CoherenceSweepResult",
 ]
