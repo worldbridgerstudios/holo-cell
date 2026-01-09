@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "holocell"
-version = "0.2.0"
-description = "Architectural discovery engine for the holographic substrate of physics constants"
+version = "0.3.0"
+description = "Architectural discovery engine for physics constants and self-healing network topologies"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
@@ -17,7 +17,11 @@ keywords = [
     "triangular-numbers",
     "gene-expression-programming",
     "fine-structure-constant",
-    "holographic"
+    "holographic",
+    "self-healing-networks",
+    "platonic-solids",
+    "graph-theory",
+    "network-topology"
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -44,3 +48,6 @@ Repository = "https://github.com/worldbridgerstudios/HoloCell"
 
 [tool.setuptools.packages.find]
 where = ["."]
+
+[tool.setuptools.package-data]
+holocell = ["*.md"]

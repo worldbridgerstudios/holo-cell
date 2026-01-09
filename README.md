@@ -3,6 +3,7 @@
 **T(16) = 136 as the eigenvalue of fundamental physics constants.**
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18183435.svg)](https://doi.org/10.5281/zenodo.18183435)
+[![PyPI version](https://badge.fury.io/py/holocell.svg)](https://pypi.org/project/holocell/)
 
 ## Installation
 
@@ -36,11 +37,39 @@ Five fundamental physics constants emerge from a single seed: **T(16) = 136**.
 
 | Constant | Expression | Error |
 |----------|------------|-------|
-| mp/me | T(16) × 3 × (9/2) + (11 - 1/T(16))/72 | **1.21×10⁻⁷%** |
+| mp/me | T(136) × 3 × (9/2) + (11 - 1/T(16))/72 | **1.21×10⁻⁷%** |
 | R∞ | B(T(11) × (√(T(16) + e) + 1/36 + 666)⁻¹) | 1.02×10⁻⁵% |
 | α⁻¹ | T(16) + (((e/36 + T(16)) + π) / (T(16) - φ)) | 1.35×10⁻⁵% |
 | μ/me | (16 + T(16) + T(16)/28 + 44) + B(S(T(16))/60) | 1.40×10⁻⁵% |
 | sin²θW | √((28 - (π + 36/T(16))⁻¹ - 9)⁻¹) | 4.67×10⁻⁴% |
+
+## Self-Healing Networks
+
+HoloCell also provides tools for analyzing self-healing network topologies derived from Platonic solids and Egyptian phonemic architecture.
+
+**The Sequence:** 12 → 36 → 60 → 80 → 120 → 136 → 240 → 408
+
+| N | Structure | κ | Survives |
+|---|-----------|---|----------|
+| 12 | Icosahedron | 5 | 4 nodes |
+| 36 | T(8) | 6 | 5 nodes |
+| 60 | Buckyball | 6 | 5 nodes |
+| 80 | Wheel × Hourglass | 6 | 5 nodes |
+| 120 | 600-cell / T(15) | 6 | 5 nodes |
+| 136 | T(16) | 6 | 5 nodes |
+| 240 | Directed pairs | 6 | 5 nodes |
+| 408 | Full grammar | 6 | 5 nodes |
+
+```python
+from holocell.networks import test_egyptian_candidates, healing_score
+
+# Test all 8 candidates
+results = test_egyptian_candidates()
+for n, analysis in sorted(results.items()):
+    print(f"N={n}: self-healing={analysis.is_self_healing}")
+```
+
+📖 **[Full documentation: docs/self-healing-networks.md](docs/self-healing-networks.md)**
 
 ## Operators
 
@@ -63,36 +92,17 @@ S(9)  # 19.5 (the breath)
 
 The full discovery process is reproducible via the `evolve` subpackage:
 
-### Stage 1: Evolve Single Constant
-
 ```python
-from holocell.evolve import evolve_constant
+from holocell.evolve import evolve_constant, test_seeds, replicate_methodology
 
-# Evolve expression for fine structure constant
+# Stage 1: Evolve expression for fine structure constant
 result = evolve_constant("alpha")
-print(f"Expression: {result.expression}")
-print(f"Error: {result.error_percent:.2e}%")
-```
 
-### Stage 2: Test Unified Seeds
-
-```python
-from holocell.evolve import test_seeds
-
-# Test candidate seeds to confirm T(16)=136 is optimal
+# Stage 2: Test candidate seeds to confirm T(16)=136 is optimal
 ranking = test_seeds()
-print(ranking[0])  # SeedTestResult(seed=136, total_error=1.89e-05, rank=1)
-```
 
-### Stage 3: Full Methodology Replication
-
-```python
-from holocell.evolve import replicate_methodology
-
-# Replicate the entire discovery
+# Stage 3: Full methodology replication
 results = replicate_methodology()
-for name, r in results.items():
-    print(f"{name}: {r.error_percent:.2e}%")
 ```
 
 ## CLI
@@ -107,48 +117,35 @@ holocell evolve proton --generations 2000
 
 # Test candidate seeds
 holocell seed-test
-holocell seed-test --all
 
 # Full methodology replication
 holocell replicate
-holocell replicate --seed-test  # includes seed comparison
 ```
 
 ## Architecture
 
 ```python
-from holocell import ARCHITECTURE, SEED, TRINITION
+from holocell import ARCHITECTURE, WHEEL, SPINE, HOURGLASS
 
 ARCHITECTURE  # [1, 7, 9, 11, 16, 28, 36, 44, 60, 66, 666]
-SEED          # T(16) = 136
-TRINITION     # T(16) × 3 = 408
+WHEEL         # 16 (phonemes)
+SPINE         # 3 (axes)
+HOURGLASS     # 5 (positions)
 ```
 
-## Project Structure
+## Documentation
 
-```
-holocell/
-├── __init__.py       # Core exports
-├── operators.py      # T, B, S operators
-├── constants.py      # CRYSTAL - the 5 expressions
-├── magic.py          # Magic number utilities
-├── cli.py            # Command-line interface
-└── evolve/           # Methodology replication
-    ├── __init__.py
-    ├── glyphs.py     # Frozen glyph system
-    ├── engine.py     # GEP evolution engine
-    ├── targets.py    # Target constants
-    └── methodology.py # High-level replication functions
-```
+- **[Self-Healing Networks](docs/self-healing-networks.md)** — Network topology analysis
+- **[Zenodo Record](https://doi.org/10.5281/zenodo.18183435)** — Academic paper and citation
 
 ## Citation
 
 ```bibtex
-@article{brown2026holocell,
+@article{brown2025holocell,
   title={HoloCell: The Reality Crystal — T(16) = 136 as the Eigenvalue of Fundamental Physics Constants},
   author={Brown, Nicholas David},
   journal={Zenodo},
-  year={2026},
+  year={2025},
   doi={10.5281/zenodo.18183435}
 }
 ```

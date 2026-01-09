@@ -1,5 +1,5 @@
 """
-HoloCell - Architectural discovery engine for physics constants
+HoloCell - Architectural discovery engine for physics constants and self-healing networks
 
 T(16) = 136 as the eigenvalue of fundamental physics.
 
@@ -15,6 +15,19 @@ USAGE:
     # Access specific constant
     proton = CRYSTAL["mp/me"]
     print(f"Error: {proton.error_percent:.2e}%")
+
+SELF-HEALING NETWORKS:
+    from holocell.networks import (
+        test_egyptian_candidates,
+        healing_score,
+        icosahedron_edges,
+        regular_polygon_edges
+    )
+    
+    # Test the sequence: 12, 36, 60, 80, 120, 136, 240, 408
+    results = test_egyptian_candidates()
+    for n, analysis in sorted(results.items()):
+        print(f"{n}: self-healing={analysis.is_self_healing}")
 
 METHODOLOGY REPLICATION:
     from holocell.evolve import evolve_constant, test_seeds, replicate_methodology
@@ -35,7 +48,7 @@ CLI:
     holocell replicate           # Full methodology replication
 """
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 from .operators import T, B, S, triangular, bilateral, six_nine
 from .constants import CRYSTAL, ARCHITECTURE, verify_all, verify_constant
@@ -47,6 +60,27 @@ from .magic import (
     RYDBERG_MANTISSA,
     find_closest_magic,
     nearest_triangular,
+)
+
+# Self-healing networks
+from .networks import (
+    T as T_network,  # Alias to avoid collision
+    inverse_T,
+    is_triangular,
+    generate_candidates,
+    icosahedron_edges,
+    dodecahedron_edges,
+    regular_polygon_edges,
+    healing_score,
+    is_connected,
+    analyze_network,
+    test_egyptian_candidates,
+    NetworkCandidate,
+    NetworkAnalysis,
+    WHEEL,
+    SPINE,
+    HOURGLASS,
+    DIRECTED,
 )
 
 __all__ = [
@@ -64,4 +98,18 @@ __all__ = [
     "RYDBERG_MANTISSA",
     "find_closest_magic",
     "nearest_triangular",
+    # Networks
+    "inverse_T",
+    "is_triangular",
+    "generate_candidates",
+    "icosahedron_edges",
+    "dodecahedron_edges",
+    "regular_polygon_edges",
+    "healing_score",
+    "is_connected",
+    "analyze_network",
+    "test_egyptian_candidates",
+    "NetworkCandidate",
+    "NetworkAnalysis",
+    "WHEEL", "SPINE", "HOURGLASS", "DIRECTED",
 ]
