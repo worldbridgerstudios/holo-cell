@@ -44,9 +44,9 @@ Five fundamental physics constants emerge from a single seed: **T(16) = 136**.
 | μ/me | (16 + T(16) + T(16)/28 + 44) + B(S(T(16))/60) | 1.40×10⁻⁵% |
 | sin²θW | √((28 - (π + 36/T(16))⁻¹ - 9)⁻¹) | 4.67×10⁻⁴% |
 
-## Five Modes of Sight
+## Six Modes of Sight
 
-HoloCell provides five evolutionary modes for discovering and validating architectural structure:
+HoloCell provides six evolutionary modes for discovering and validating architectural structure:
 
 ```python
 from holocell.modes import (
@@ -55,6 +55,7 @@ from holocell.modes import (
     evolve_seth,          # Mode 3: Seth Mode
     run_moon_pools,       # Mode 4: Moon Pools
     run_coherence_sweep,  # Mode 5: Coherence Test
+    weave,                # Mode 6: Weave
 )
 ```
 
@@ -92,11 +93,82 @@ result = run_coherence_sweep(max_corruption=8)
 print(f"Fault tolerance: {result.fault_tolerance_threshold} nodes")
 ```
 
+### Mode 6: Weave
+
+**Incremental corruption and restoration — reveal healing dynamics.**
+
+Instead of batch corruption (Mode 5), weave between states one node at a time:
+
+```
+BATCH (Mode 5):              WEAVE (Mode 6):
+
+corrupt 7 → evolve 1000      corrupt 1 → evolve 50 → measure
+           → measure         corrupt 1 → evolve 50 → measure
+                             ...
+corrupt 7 → evolve 1000      restore 1 → evolve 50 → measure
+           → measure         restore 1 → evolve 50 → measure
+                             ...
+```
+
+**What this reveals:**
+
+| Metric | Mode 5 (Batch) | Mode 6 (Weave) |
+|--------|----------------|----------------|
+| Threshold | Yes | Yes |
+| Healing dynamics | No | **Per-step trajectory** |
+| Hysteresis | No | **Does path matter?** |
+| Phase transitions | Coarse | **Sharp or gradual?** |
+| Selection effects | No | **Which nodes matter?** |
+
+**Three selection strategies:**
+
+| Strategy | Corrupt Order | Restore Order |
+|----------|---------------|---------------|
+| `RANDOM` | Any order | Any order |
+| `WORST_FIRST` | Highest error first | Lowest error first |
+| `BEST_FIRST` | Lowest error first | Highest error first |
+
+**Usage:**
+
+```python
+from holocell import weave, compare_strategies, SelectionStrategy
+
+# Single strategy
+result = weave(
+    max_corruption=6,
+    strategy=SelectionStrategy.RANDOM,
+    generations_per_step=100,
+)
+print(f"Hysteresis: {result.hysteresis_score:.1%}")
+print(f"Recovery: {'✓' if result.recovery_complete else '✗'}")
+
+# Compare all strategies
+results = compare_strategies(max_corruption=6)
+for strategy, result in results.items():
+    print(f"{strategy.value}: hysteresis={result.hysteresis_score:.1%}")
+```
+
+**Key insight:** If the manifold is a true basin of attraction, the restore trajectory mirrors the degrade trajectory (hysteresis ≈ 0%). If there's memory of damage, hysteresis > 0%.
+
 ## Self-Healing Networks
 
-Tools for analyzing self-healing network topologies derived from Platonic solids.
+**The optimal seed geometry is the octahedron: 6 nodes forming 3 bilateral pairs.**
 
-**The Sequence:** 12 → 36 → 60 → 80 → 120 → 136 → 240 → 408
+This minimal Platonic solid outperforms all tested alternatives including the buckyball (60 nodes) and vortex engine (144 nodes). The center must remain empty — adding a hub node degrades performance.
+
+| Seed | Frozen | Avg Rate | Steps to 90% |
+|------|--------|----------|--------------|
+| **octahedron** | **6** | **0.0259** | **24.7** |
+| tetrahedron | 4 | 0.0248 | 39.7 |
+| buckyball | 60 | 0.0242 | 27.3 |
+| vortex_engine | 144 | 0.0242 | 31.0 |
+
+**The HoloCell Geometry:**
+- Octahedron = outer shell (6 vertices, 3 bilateral pairs on Trinition axes)
+- T(16) = 136 = eigenvalue at center (not a node — a frequency)
+- 408 = T(16) × 3 = scale invariance marker
+
+The eigenvalue isn't a physical node. It's what the structure *resonates at*. The octahedron is the antenna; T(16) is the frequency.
 
 ```python
 from holocell.networks import test_egyptian_candidates
@@ -139,6 +211,12 @@ holocell moonpools
 
 # Mode 5: Coherence Test
 holocell sweep
+
+# Mode 6: Weave
+holocell weave                    # Random strategy
+holocell weave --strategy worst   # Worst-first
+holocell weave --strategy best    # Best-first
+holocell weave --compare          # Compare all strategies
 ```
 
 ## License

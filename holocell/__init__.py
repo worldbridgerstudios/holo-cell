@@ -28,13 +28,15 @@ SELF-HEALING NETWORKS:
     for n, analysis in sorted(results.items()):
         print(f"{n}: self-healing={analysis.is_self_healing}")
 
-FIVE MODES OF SIGHT:
+SIX MODES OF SIGHT:
     from holocell.modes import (
         evolve_constant,      # Mode 1: Fixed Focus
         evolve_coherent,      # Mode 2: Coherent Zoom
         evolve_seth,          # Mode 3: Seth Mode
         run_moon_pools,       # Mode 4: Moon Pools
         run_coherence_sweep,  # Mode 5: Coherence Test
+        weave,                # Mode 6: Weave
+        run_maintained_network,  # Mode 7: Maintained
     )
     
     # Mode 1: Evolve single constant with fixed seed
@@ -51,6 +53,18 @@ FIVE MODES OF SIGHT:
     
     # Mode 5: N-node corruption sweep (fault tolerance)
     result = run_coherence_sweep(max_corruption=8)
+    
+    # Mode 6: Incremental weave (healing dynamics)
+    result = weave(max_corruption=6, strategy=SelectionStrategy.RANDOM)
+    
+    # Mode 7: Maintained network (self-healing with memory)
+    result = run_maintained_network(corruption_count=6)
+    
+    # Mode 8: Phalanx (self-healing with dynamic flanks)
+    result = run_phalanx(corruption_count=4)
+    
+    # Mode 9: Spine (merkabah quantum network)
+    result = run_spine_experiment(spine_length=9, network_size=36)
 
 CLI:
     holocell verify              # Verify crystallized expressions
@@ -59,6 +73,8 @@ CLI:
     holocell seth                # Mode 3: Seth Mode
     holocell moonpools           # Mode 4: Moon Pools
     holocell sweep               # Mode 5: Coherence Test
+    holocell weave               # Mode 6: Weave
+    holocell maintain            # Mode 7: Maintained
 """
 
 __version__ = "0.5.0"
@@ -96,7 +112,7 @@ from .networks import (
     DIRECTED,
 )
 
-# Five Modes of Sight (re-exported for convenience)
+# Six Modes of Sight (re-exported for convenience)
 from .modes import (
     # Mode 1: Fixed Focus
     evolve_constant,
@@ -114,6 +130,33 @@ from .modes import (
     # Mode 5: Coherence Test
     run_coherence_sweep,
     CoherenceSweepResult,
+    # Mode 6: Weave
+    weave,
+    compare_strategies,
+    WeaveResult,
+    WeaveStep,
+    SelectionStrategy,
+    # Mode 7: Maintained
+    run_maintained_network,
+    sweep_maintained_network,
+    MaintainedNetwork,
+    MaintainedNetworkResult,
+    HealingStep,
+    # Mode 8: Phalanx
+    run_phalanx,
+    sweep_phalanx,
+    PhalanxNetwork,
+    PhalanxResult,
+    PhalanxStep,
+    NodeState,
+    NodeRole,
+    # Mode 9: Spine
+    run_spine_experiment,
+    sweep_network_size,
+    sweep_spine_length,
+    find_stability_frontier,
+    SpineNetwork,
+    SpineResult,
 )
 
 __all__ = [
@@ -163,4 +206,31 @@ __all__ = [
     # Mode 5: Coherence Test
     "run_coherence_sweep",
     "CoherenceSweepResult",
+    # Mode 6: Weave
+    "weave",
+    "compare_strategies",
+    "WeaveResult",
+    "WeaveStep",
+    "SelectionStrategy",
+    # Mode 7: Maintained
+    "run_maintained_network",
+    "sweep_maintained_network",
+    "MaintainedNetwork",
+    "MaintainedNetworkResult",
+    "HealingStep",
+    # Mode 8: Phalanx
+    "run_phalanx",
+    "sweep_phalanx",
+    "PhalanxNetwork",
+    "PhalanxResult",
+    "PhalanxStep",
+    "NodeState",
+    "NodeRole",
+    # Mode 9: Spine
+    "run_spine_experiment",
+    "sweep_network_size",
+    "sweep_spine_length",
+    "find_stability_frontier",
+    "SpineNetwork",
+    "SpineResult",
 ]
