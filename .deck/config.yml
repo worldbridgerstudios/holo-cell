@@ -1,0 +1,8 @@
+name: holo-cell
+status: active
+
+stack:
+  - python
+  - pypi
+
+connections: {}
